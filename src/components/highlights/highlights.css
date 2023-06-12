@@ -1,0 +1,83 @@
+.highlights-div {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+  border-radius: 2.5rem;
+}
+.highlights-div .highlights-top {
+  /* margin: 1rem 0; */
+  gap: 2rem;
+  display: flex;
+  margin-top: 1rem;
+}
+
+.highlights-div .highlights-top .rect-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 2rem;
+  gap: 1.5rem;
+}
+.highlights-div .highlights-top .rect-card .card-name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.highlights-div .highlights-top .rect-card ul {
+  display: flex;
+  justify-content: space-between;
+}
+.highlights-div .highlights-top .rect-card ul .li-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.highlights-div .highlights-top .rect-card ul .li-info .li-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+.highlights-div .highlights-top .rect-card ul .li-info p {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.card-rating {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--special-color);
+  font-weight: 500;
+  color: black;
+  border-radius: 2rem;
+}
+.highlights-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.highlights-bottom .sq-card {
+  padding: 2rem;
+  border-radius: 2rem;
+}
+.highlights-bottom .sq-card {
+  padding: 2rem;
+  border-radius: 2rem;
+}
+.highlights-bottom .sq-card .sq-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+
+.highlights-bottom .sq-card .sq-infos {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.highlights-bottom .sq-card .sq-infos p {
+  font-size: 2.2rem;
+  font-weight: 500;
+}

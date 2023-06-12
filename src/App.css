@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  --primary-background: #141216;
+  --secondary-background: #1d1b1f;
+  --white-color: #ffffff;
+  --primary-font: #dbd9dd;
+  --secondary-font: #86848b;
+  --special-color: #a590db;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  transition: background-color 200ms;
+  margin: 0;
+  /* scroll-behavior: smooth;
+      scroll-padding: 8rem; */
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+}
+.app {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--primary-background);
+  overflow-x: hidden;
+  color: white;
+}
+
+.app .main-grid {
+  /* grid-template-areas:
+    "current highlights highlights highlights highlights"
+    "hourly hourly hourly hourly hourly"; */
+  gap: 5rem;
+  margin: 2rem 4rem;
+}
+.app .main-grid .current-div {
+  width: 25%;
+}
+.app .main-grid .highlights-div {
+  width: 75%;
+}
+.app .main-grid .hourly-div {
+  width: 100%;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+li {
+  list-style: none;
+}
+.title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+  color: var(--primary-font);
+}
+.p-font,
+.s-font {
+  text-transform: capitalize;
+}
+.p-font {
+  color: var(--primary-font);
+}
+.s-font {
+  color: var(--secondary-font);
+}
+.s-bg {
+  background-color: var(--secondary-background);
+}
+.p-bg {
+  background-color: var(--primary-background);
+}
+
+/* @media screen and (min-width: 650px) {} */

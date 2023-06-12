@@ -1,0 +1,39 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 2.5rem;
+}
+nav .logo {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  cursor: pointer;
+}
+nav form {
+}
+nav input {
+  padding: 0.5rem 2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  background-color: var(--secondary-background);
+  color: var(--primary-font);
+}
+nav input:focus {
+  border: 2px solid var(--secondary-font);
+}
+
+nav button {
+  font-family: inherit;
+  padding: 1rem 1.5rem;
+  background-color: var(--special-color);
+  border: 1px solid black;
+  border-radius: 4rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  cursor: pointer;
+}

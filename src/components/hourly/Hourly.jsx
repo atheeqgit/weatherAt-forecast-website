@@ -9,74 +9,74 @@ const Hourly = () => {
         <div className="hourly-card s-bg">
           <h3 className="p-font">2 AM</h3>
           <img
-            src="https://openweathermap.org/img/wn/10d.png"
+            src="https://openweathermap.org/img/wn/10d@2x.png"
             alt=""
             srcset=""
           />
-          <p>20'</p>
+          <p className="s-font">20'</p>
         </div>
         <div className="hourly-card s-bg">
           <h3 className="p-font">2 AM</h3>
           <img
-            src="https://openweathermap.org/img/wn/10d.png"
+            src="https://openweathermap.org/img/wn/10d@2x.png"
             alt=""
             srcset=""
           />
-          <p>20'</p>
+          <p className="s-font">20'</p>
         </div>
         <div className="hourly-card s-bg">
           <h3 className="p-font">2 AM</h3>
           <img
-            src="https://openweathermap.org/img/wn/10d.png"
+            src="https://openweathermap.org/img/wn/10d@2x.png"
             alt=""
             srcset=""
           />
-          <p>20'</p>
+          <p className="s-font">20'</p>
         </div>
         <div className="hourly-card s-bg">
           <h3 className="p-font">2 AM</h3>
           <img
-            src="https://openweathermap.org/img/wn/10d.png"
+            src="https://openweathermap.org/img/wn/10d@2x.png"
             alt=""
             srcset=""
           />
-          <p>20'</p>
+          <p className="s-font">20'</p>
         </div>
         <div className="hourly-card s-bg">
           <h3 className="p-font">2 AM</h3>
           <img
-            src="https://openweathermap.org/img/wn/10d.png"
+            src="https://openweathermap.org/img/wn/10d@2x.png"
             alt=""
             srcset=""
           />
-          <p>20'</p>
+          <p className="s-font">20'</p>
         </div>
         <div className="hourly-card s-bg">
           <h3 className="p-font">2 AM</h3>
           <img
-            src="https://openweathermap.org/img/wn/10d.png"
+            src="https://openweathermap.org/img/wn/10d@2x.png"
             alt=""
             srcset=""
           />
-          <p>20'</p>
+          <p className="s-font">20'</p>
         </div>
         <div className="hourly-card s-bg">
           <h3 className="p-font">2 AM</h3>
           <img
-            src="https://openweathermap.org/img/wn/10d.png"
+            src="https://openweathermap.org/img/wn/10d@2x.png"
             alt=""
             srcset=""
           />
-          <p>20'</p>
+          <p className="s-font">20'</p>
         </div>
         <div className="hourly-card s-bg">
           <h3 className="p-font">2 AM</h3>
           <img
-            src="https://openweathermap.org/img/wn/10d.png"
+            src="https://openweathermap.org/img/wn/10d@2x.png"
             alt=""
             srcset=""
           />
-          <p>20'</p>
+          <p className="s-font">20'</p>
         </div>
       </div>
     </div>

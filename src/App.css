@@ -40,7 +40,7 @@ body {
     "current highlights highlights highlights highlights"
     "hourly hourly hourly hourly hourly"; */
   gap: 5rem;
-  margin: 2rem 4rem;
+  margin: 0 4rem;
 }
 .app .main-grid .current-div {
   width: 25%;

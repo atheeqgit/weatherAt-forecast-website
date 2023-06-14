@@ -23,8 +23,12 @@ nav input {
   background-color: var(--secondary-background);
   color: var(--primary-font);
 }
+
+.nav-holder {
+  display: contents;
+}
 nav input:focus {
-  border: 2px solid var(--secondary-font);
+  border: 2px solid var(--primary-font);
 }
 
 nav button {
@@ -36,4 +40,23 @@ nav button {
   font-weight: 500;
   font-size: 1.6rem;
   cursor: pointer;
+}
+@media screen and (max-width: 700px) {
+  nav {
+    flex-direction: column;
+  }
+  .nav-holder {
+    display: flex;
+    gap: 2rem;
+    /* flex-direction: row-reverse; */
+    white-space: nowrap;
+    width: 100%;
+    margin: 1rem;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 600px) {
+  nav input {
+    width: 80%;
+  }
 }

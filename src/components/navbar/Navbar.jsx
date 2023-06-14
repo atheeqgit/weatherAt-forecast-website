@@ -3,7 +3,7 @@ import Context from "../../context.js";
 import "./navbar.css";
 
 const Navbar = () => {
-  const { setSearch } = useContext(Context);
+  const { setSearch, color } = useContext(Context);
   const [input, setInput] = useState("");
 
   return (
@@ -12,24 +12,27 @@ const Navbar = () => {
         <img src="     https://openweathermap.org/img/wn/02d.png" />
         WeatherAt.in
       </div>
-      <form
-        className="search-box"
-        onSubmit={(e) => {
-          e.preventDefault();
-          setSearch(input);
-          setInput("");
-        }}
-      >
-        <input
-          value={input}
-          type="text"
-          placeholder="search"
-          onChange={(e) => {
-            setInput(e.target.value);
+      <div className="nav-holder">
+        <form
+          className="search-box"
+          onSubmit={(e) => {
+            e.preventDefault();
+            setSearch(input);
+            setInput("");
           }}
-        />
-      </form>
-      <button>Current Location</button>
+        >
+          <input
+            value={input}
+            type="text"
+            placeholder="search"
+            onChange={(e) => {
+              setInput(e.target.value);
+            }}
+            style={{ border: `2px solid ${color}` }}
+          />
+        </form>
+        <button>Current Location</button>
+      </div>
     </nav>
   );
 };

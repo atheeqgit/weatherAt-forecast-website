@@ -32,7 +32,17 @@ body {
   overflow-x: hidden;
   color: white;
 }
-
+.Wait-screen {
+  text-align: center;
+  display: grid;
+  align-content: center;
+  height: 75vh;
+}
+.Wait-screen p {
+  font-size: 4rem;
+  color: grey;
+  font-weight: 500;
+}
 .app .main-grid {
   /* width: 100%; */
 
@@ -55,8 +65,9 @@ body {
 .top {
   /* width: 100%; */
   display: flex;
-  align-items: center;
+
   gap: 4rem;
+  height: 100%;
 }
 
 .hourly-div {
@@ -89,4 +100,23 @@ li {
   background-color: var(--primary-background);
 }
 
-/* @media screen and (min-width: 650px) {} */
+@media screen and (max-width: 1100px) {
+  .highlights-div .highlights-top .rect-card ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 850px) {
+  .top {
+    /* width: 100%; */
+    flex-direction: column;
+  }
+  .app .main-grid .current-div {
+    width: 100%;
+  }
+  .app .main-grid .highlights-div {
+    width: 100%;
+  }
+  .app .main-grid .hourly-div {
+    width: 100%;
+  }
+}

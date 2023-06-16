@@ -23,16 +23,18 @@ function App() {
   let lat;
   let lon;
 
+  if (userLocation) {
+    lat = userLocation.coords.latitude;
+    lon = userLocation.coords.longitude;
+  }
   function useLocation() {
     if (userLocation) {
-      lat = userLocation.coords.latitude;
-      lon = userLocation.coords.longitude;
       fetchLocationData();
     }
   }
 
   async function latlon() {
-    if (search != "" || userLocation) {
+    if (search != "") {
       Axios.get(
         `https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${APIkey}`
       ).then((response) => {

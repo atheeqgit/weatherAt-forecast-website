@@ -89,7 +89,7 @@ function App() {
       if (response.status === 200) {
         setSearch(response.data.name);
         latlon();
-        //console.log(response.data.name);
+        console.log(response.data.name);
       } else console.log(response);
     });
   }

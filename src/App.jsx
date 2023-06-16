@@ -35,6 +35,7 @@ function App() {
 
   async function latlon() {
     if (search != "" && userLocation) {
+      console.log(search);
       Axios.get(
         `https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${APIkey}`
       ).then((response) => {
@@ -88,8 +89,8 @@ function App() {
       //
       if (response.status === 200) {
         setSearch(response.data.name);
-        latlon();
         console.log(response.data.name);
+        latlon();
       } else console.log(response);
     });
   }

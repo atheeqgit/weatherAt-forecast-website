@@ -16,7 +16,7 @@ const Hourly = () => {
             const timestr = date.toLocaleTimeString();
 
             return (
-              <div className="hourly-card s-bg">
+              <div key={index} className="hourly-card s-bg">
                 <h3 className="p-font">{data.dt_txt}</h3>
                 <img
                   src={`https://openweathermap.org/img/wn/${data.weather[0].icon}.png`}

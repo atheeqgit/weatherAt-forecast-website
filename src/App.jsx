@@ -11,7 +11,7 @@ function App() {
   const [hourlyData, setHourlyData] = useState("");
   const [search, setSearch] = useState("");
   const [color, setColor] = useState("");
-
+  const [userLocation, setUserLocation] = useState();
   const [place, setPlace] = useState("");
   const [loading, setLoading] = useState(
     "The Content is loading please wait...."
@@ -22,17 +22,21 @@ function App() {
 
   let lat;
   let lon;
-  console.log(color);
+
+  function useLocation() {
+    if (userLocation) {
+      lat = userLocation.coords.latitude;
+      lon = userLocation.coords.longitude;
+      fetchLocationData();
+    }
+  }
 
   async function latlon() {
-    if (search != "") {
+    if (search != "" || userLocation) {
       Axios.get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${APIkey}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${APIkey}`
       ).then((response) => {
-        console.log(response.status);
         if (response.status === 200) {
-          console.log(response.data);
-
           if (response.data.length === 0) {
             setColor("#ff6161");
             return console.log("not Availible");
@@ -48,7 +52,6 @@ function App() {
         }
       });
     } else {
-      console.log("give dorrect input!!");
       setColor("#ff6161");
     }
   }
@@ -76,14 +79,37 @@ function App() {
     });
   }
 
+  async function fetchLocationData() {
+    Axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}&units=metric`
+    ).then((response) => {
+      //
+      if (response.status === 200) {
+        setSearch(response.data.name);
+      } else console.log(response);
+    });
+  }
   useEffect(() => {
     latlon();
   }, [search]);
 
+  useEffect(() => {
+    useLocation();
+    // fetchLocationData();
+  }, [userLocation]);
+
   return (
     <div className="app">
       <Context.Provider
-        value={{ data, place, date, hourlyData, setSearch, color }}
+        value={{
+          data,
+          place,
+          date,
+          hourlyData,
+          setSearch,
+          color,
+          setUserLocation,
+        }}
       >
         <Navbar />
         {data && hourlyData ? (
@@ -97,7 +123,7 @@ function App() {
         ) : search == "" ? (
           <Wait msg="please search your place" />
         ) : (
-          <Wait msg="Please Wait , the content is loading ......" />
+          <Wait msg="Please Wait content is loading ......" />
         )}
       </Context.Provider>
     </div>

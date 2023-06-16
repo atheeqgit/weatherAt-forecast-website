@@ -3,8 +3,28 @@ import Context from "../../context.js";
 import "./navbar.css";
 
 const Navbar = () => {
-  const { setSearch, color } = useContext(Context);
+  const { setSearch, color, setUserLocation } = useContext(Context);
   const [input, setInput] = useState("");
+
+  const handleClick = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  };
+
+  const successCallback = (position) => {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    console.log("Latitude: " + latitude);
+    console.log("Longitude: " + longitude);
+    setUserLocation(position);
+  };
+
+  const errorCallback = (error) => {
+    console.log("Error occurred. Error code: " + error.code);
+  };
 
   return (
     <nav className="navbar">
@@ -31,7 +51,7 @@ const Navbar = () => {
             style={{ border: `2px solid ${color}` }}
           />
         </form>
-        <button>Current Location</button>
+        <button onClick={handleClick}>Current Location</button>
       </div>
     </nav>
   );

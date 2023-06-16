@@ -29,6 +29,7 @@
   font-size: 1.8rem;
   font-weight: 500;
 }
+
 @media screen and (max-width: 1100px) {
   .hourly-grid {
     grid-template-columns: repeat(6, 1fr);
@@ -38,6 +39,9 @@
 @media screen and (max-width: 850px) {
   .hourly-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .hourly-div .title {
+    margin: 2rem 0;
   }
 }
 @media screen and (max-width: 600px) {

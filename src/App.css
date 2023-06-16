@@ -39,6 +39,7 @@ body {
   height: 75vh;
 }
 .Wait-screen p {
+  margin: 1rem 2rem;
   font-size: 4rem;
   color: grey;
   font-weight: 500;

@@ -35,14 +35,16 @@ function App() {
 
   async function latlon() {
     if (search != "" && userLocation) {
-      console.log(search);
+      // console.log(search);
       Axios.get(
         `https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${APIkey}`
       ).then((response) => {
         if (response.status === 200) {
           if (response.data.length === 0) {
             setColor("#ff6161");
-            return console.log("not Availible");
+            return setLoading(
+              "Your Location data is not available, please search your city or district "
+            );
           }
           setColor("var(--primary-font)");
           lat = response.data[0].lat;
@@ -89,7 +91,7 @@ function App() {
       //
       if (response.status === 200) {
         setSearch(response.data.name);
-        console.log(response.data.name);
+        // console.log(response.data.name);
         latlon();
       } else console.log(response);
     });

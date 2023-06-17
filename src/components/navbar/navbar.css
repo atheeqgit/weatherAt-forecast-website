@@ -39,6 +39,10 @@ nav button {
   border-radius: 4rem;
   font-weight: 500;
   font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
   cursor: pointer;
 }
 @media screen and (max-width: 700px) {
@@ -47,8 +51,7 @@ nav button {
   }
   .nav-holder {
     display: flex;
-    gap: 2rem;
-    /* flex-direction: row-reverse; */
+    gap: 1rem;
     white-space: nowrap;
     width: 100%;
     margin: 1rem;
@@ -57,6 +60,6 @@ nav button {
 }
 @media screen and (max-width: 600px) {
   nav input {
-    width: 80%;
+    width: 90%;
   }
 }

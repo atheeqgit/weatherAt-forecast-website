@@ -1,10 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { MdGpsFixed } from "react-icons/md";
+
 import Context from "../../context.js";
 import "./navbar.css";
 
 const Navbar = () => {
   const { setSearch, color, setUserLocation } = useContext(Context);
   const [input, setInput] = useState("");
+
+  useEffect(() => {
+    handleClick();
+  }, []);
 
   const handleClick = () => {
     if (navigator.geolocation) {
@@ -47,7 +53,9 @@ const Navbar = () => {
             style={{ border: `2px solid ${color}` }}
           />
         </form>
-        <button onClick={handleClick}>Current Location</button>
+        <button onClick={handleClick}>
+          <MdGpsFixed size={25} /> Location
+        </button>
       </div>
     </nav>
   );

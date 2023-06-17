@@ -45,3 +45,13 @@
     font-size: 4rem;
   }
 }
+@media screen and (max-width: 850px) {
+  .current-div .current-info h1 {
+    font-size: 7rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .current-div .current-info h1 {
+    font-size: 6rem;
+  }
+}

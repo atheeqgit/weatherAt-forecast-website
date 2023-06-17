@@ -105,11 +105,17 @@ li {
   .highlights-div .highlights-top .rect-card ul {
     grid-template-columns: repeat(2, 1fr);
   }
+  .Wait-screen p {
+    font-size: 3rem;
+  }
 }
 @media screen and (max-width: 850px) {
   .top {
     /* width: 100%; */
     flex-direction: column;
+  }
+  .app .main-grid {
+    margin: 0 3rem;
   }
   .app .main-grid .current-div {
     width: 100%;
@@ -119,5 +125,13 @@ li {
   }
   .app .main-grid .hourly-div {
     width: 100%;
+  }
+  .Wait-screen p {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .app .main-grid {
+    margin: 0 2rem;
   }
 }

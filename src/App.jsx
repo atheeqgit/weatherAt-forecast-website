@@ -34,26 +34,31 @@ function App() {
   }
 
   async function latlon() {
-    if (search != "" && userLocation) {
-      // console.log(search);
+    if (search != "") {
+      setData("");
+      setHourlyData("");
+      setLoading(" loading please wait....");
       Axios.get(
         `https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${APIkey}`
       ).then((response) => {
         if (response.status === 200) {
           if (response.data.length === 0) {
             setColor("#ff6161");
-            return setLoading(
+            setData("");
+            setHourlyData("");
+            setLoading(
               "Your Location data is not available, please search your city or district "
             );
+          } else {
+            setColor("var(--primary-font)");
+            lat = response.data[0].lat;
+            lon = response.data[0].lon;
+            let city = response.data[0].name;
+            let country = response.data[0].country;
+            setPlace(`${city},${country}`);
+            fetchData();
+            fetchHourlyData();
           }
-          setColor("var(--primary-font)");
-          lat = response.data[0].lat;
-          lon = response.data[0].lon;
-          let city = response.data[0].name;
-          let country = response.data[0].country;
-          setPlace(`${city},${country}`);
-          fetchData();
-          fetchHourlyData();
         }
       });
     } else {
@@ -88,10 +93,9 @@ function App() {
     Axios.get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}&units=metric`
     ).then((response) => {
-      //
       if (response.status === 200) {
         setSearch(response.data.name);
-        // console.log(response.data.name);
+
         latlon();
       } else console.log(response);
     });
@@ -122,15 +126,15 @@ function App() {
         {data && hourlyData ? (
           <div className="main-grid">
             <div className="top">
-              {data ? <Current /> : loading}
-              {data ? <Highlights /> : loading}
+              <Current />
+              <Highlights />
             </div>
-            {hourlyData ? <Hourly /> : loading}
+            <Hourly />
           </div>
         ) : search == "" ? (
-          <Wait msg="please search your place" />
+          <Wait msg="please search your place or click current position button" />
         ) : (
-          <Wait msg="Please Wait content is loading ......" />
+          <Wait msg={loading} />
         )}
       </Context.Provider>
     </div>

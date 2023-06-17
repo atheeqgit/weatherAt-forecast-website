@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: start;
   height: fit-content;
-
   justify-content: start;
   padding: 2rem;
   border-radius: 2.5rem;
@@ -18,10 +17,13 @@
   margin-bottom: 0.5rem;
 }
 .current-div .dd {
+  display: flex;
   color: var(--special-color);
   font-size: 1.8rem;
   font-weight: 500;
   padding-top: 1.5rem;
+  align-items: center;
+  gap: 1.5rem;
 }
 .current-div .current-info {
   width: -webkit-fill-available;
